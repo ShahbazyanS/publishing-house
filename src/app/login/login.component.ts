@@ -3,7 +3,7 @@ import {AuthService} from "../services/auth.service";
 import {TokenStorageService} from "../services/token-storage.service";
 import {Router} from "@angular/router";
 import {UserService} from "../services/user.service";
-
+import {User} from "../model/user";
 
 @Component({
   selector: 'app-login',
@@ -15,12 +15,15 @@ export class LoginComponent implements OnInit {
     email: null,
     password: null
   };
+  email: string;
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
+  user: User = new User();
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router, private userService: UserService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router, private userService: UserService) {
+  }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -29,14 +32,17 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
   onSubmit(): void {
-    const { email, password } = this.form;
+    const {email, password} = this.form;
 
     this.authService.login(email, password).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
+        this.userService.getUser(email).subscribe(data=>{
+          this.user = data
+        })
+        this.email = email
+        this.tokenStorage.saveUser(this.user);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
@@ -49,7 +55,11 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  logout(): void{
+  userPage(id: number) {
+    this.router.navigate(['user', id])
+  }
+
+  logout(): void {
     this.tokenStorage.signOut();
   }
 }

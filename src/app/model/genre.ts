@@ -1,0 +1,11 @@
+export enum Genre {
+  ACTION,
+  CLASSIC,
+  COMIC,
+  NOVEL,
+  MYSTERY,
+  FANTASY,
+  HISTORICAL,
+  FICTION,
+  LITERARY
+}

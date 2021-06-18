@@ -142,7 +142,10 @@
               </div>
             </form>
             <!---->
-            <div class="alert alert-success" *ngIf="isLoggedIn">
+            <div class="alert alert-success" *ngIf="isLoggedIn" >
+              <label>
+              {{userPage(user.id)}}
+              </label>
               <a href class="zmdi-link" (click)="logout()">LogOut</a>
             </div>
           </div>

@@ -1,1 +1,9 @@
-<p>user-page works!</p>
+<ul>
+  <li>{{user.name}}</li>
+  <li>{{user.email}}</li>
+</ul>
+
+<ul *ngFor="let pubHouse of pubHouses">
+<!--  <li>{{pubHouse.name}}</li>-->
+  <button (click)="pubHousePage(pubHouse.id)">{{pubHouse.name}}</button>
+</ul>

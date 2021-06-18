@@ -1,8 +1,13 @@
+
+import {UserType} from "./user-type";
+
 export class User {
-  id: number | undefined;
-  name: string | undefined;
-  email: string | undefined;
-  password: string | undefined;
-  confirmPassword: string | undefined;
-  active: boolean | undefined;
+  id: number;
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  active: boolean;
+  userType: UserType;
+
 }

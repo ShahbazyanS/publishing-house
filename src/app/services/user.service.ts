@@ -16,7 +16,11 @@ export class UserService {
     return this.httpClient.post(`${this.baseUrl}/add`, user)
   }
 
-  getUser(id: number): Observable<Object>{
+  getUser(email: string): Observable<User>{
+    return this.httpClient.get<User>(`${this.baseUrl}/email/${email}`)
+  }
+
+  getUserById(id: number): Observable<any>{
     return this.httpClient.get(`${this.baseUrl}/${id}`)
   }
 }

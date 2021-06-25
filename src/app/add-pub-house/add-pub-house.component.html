@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <input type="text" [(ngModel)]="pubHouse.name" name="name" placeholder="Name">
+  </div>
+  <div>
+
+    <select
+      name="contact"
+      [(ngModel)]="pubHouse.contact">
+      <option *ngFor="let contact of contacts" [ngValue]="contact">{{contact.address}}</option>
+    </select>
+  </div>
+  <button type="submit" name="signup" id="signup" class="form-submit">Add</button>
+</form>

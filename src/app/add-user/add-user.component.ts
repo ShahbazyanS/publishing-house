@@ -30,5 +30,4 @@ export class AddUserComponent implements OnInit {
     this.saveUser()
     this.router.navigate(['/login'])
   }
-
 }

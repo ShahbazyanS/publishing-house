@@ -1,17 +1,6 @@
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <input type="text" [(ngModel)]="book.title" placeholder="Title"/>
-  </div>
-  <div>
-    <input type="email" [(ngModel)]="book.description" placeholder="description"/>
-  </div>
-  <div>
-    <label for="genre">Genres</label>
-    <select [(ngModel)]="book.genre" name="genre">
-      <option *ngFor="let genre of genres" [value]="genre.value"></option>
-    </select>
-  </div>
-  <button type="submit" name="signup" id="signup" class="form-submit">Add</button>
+<div class="container">
+<app-add-author ></app-add-author><br>
 
-</form>
+<app-add-book [publishingHouse1]="pubHouse.id"></app-add-book>
 
+</div>

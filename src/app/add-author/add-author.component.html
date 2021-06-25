@@ -1,0 +1,32 @@
+<h3>Add Author</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <input type="text" [(ngModel)]="author.name" name="name" placeholder="Name">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="author.surname" name="surname" placeholder="Surname">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="author.bio" name="bio" placeholder="Bio">
+    </div>
+
+    <!--    <div>-->
+    <!--    <label *ngFor="let item of genders">-->
+    <!--      <input type="radio" name="gender" [(ngModel)]="author.gender"-->
+    <!--             value="{{male}}">-->
+    <!--      {{item}}-->
+    <!--    </label>-->
+    <!--    </div>-->
+    <div>
+    <label><p>male</p>
+      <input [(ngModel)]="author.gender" type="radio" name="gender" class="gender1" value="MALE">
+    </label>
+    <label> <p>female</p>
+      <input [(ngModel)]="author.gender" type="radio" name="gender" class="gender2" value="FEMALE">
+    </label>
+    </div>
+
+    <button type="submit" name="signup" id="signup" class="form-submit">Add</button>
+  </form>
+
+

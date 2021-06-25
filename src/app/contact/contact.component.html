@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <input type="text" [(ngModel)]="contact.address" name="address" placeholder="address">
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="contact.email" name="email" placeholder="email">
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="contact.phone" name="phone" placeholder="phone">
+  </div>
+  <button type="submit" name="signup" id="signup" class="form-submit">Add</button>
+</form>

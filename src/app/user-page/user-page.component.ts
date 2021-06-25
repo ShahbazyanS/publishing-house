@@ -14,14 +14,13 @@ export class UserPageComponent implements OnInit {
 
   id: number;
   user: User;
-  pubHouses: PublishingHouse[];
 
-  constructor(private routerActivate: ActivatedRoute,private router: Router, private userService: UserService, private pubHouseService: PubHouseService) {
+  constructor(private routerActivate: ActivatedRoute,private router: Router, private userService: UserService) {
   }
 
   ngOnInit(): void {
+    this.id = this.routerActivate.snapshot.params['id']
     this.userPage()
-    this.allPubHouses();
   }
 
   userPage(){
@@ -36,9 +35,4 @@ export class UserPageComponent implements OnInit {
     this.router.navigate(['publishing_house', id]);
   }
 
-  private allPubHouses(){
-    this.pubHouseService.getAll().subscribe(data => {
-      this.pubHouses = data;
-    })
-  }
 }

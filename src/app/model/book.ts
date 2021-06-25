@@ -8,7 +8,7 @@ export class Book{
   description: string;
   picUrl: string;
   genre: Genre;
-  publishingHouse: PublishingHouse;
+  pubId: number;
   author: Author;
 
 }

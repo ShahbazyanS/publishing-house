@@ -20,4 +20,16 @@ export class PubHouseService {
   getById(id: number): Observable<PublishingHouse>{
     return this.http.get<PublishingHouse>(`${this.baseUrl}/${id}`)
   }
+
+  createPubHouse(pubHouse: PublishingHouse): Observable<PublishingHouse>{
+    return this.http.post<PublishingHouse>(`${this.baseUrl}`, pubHouse)
+  }
+
+  update(id: number, pubHouse: PublishingHouse): Observable<PublishingHouse>{
+    return this.http.put<PublishingHouse>(`${this.baseUrl}/${id}`, pubHouse)
+  }
+
+  delete(id: number): Observable<Object>{
+    return this.http.delete(`${this.baseUrl}/${id}`)
+  }
 }

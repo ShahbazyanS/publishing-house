@@ -4,6 +4,7 @@ import {TokenStorageService} from "../services/token-storage.service";
 import {Router} from "@angular/router";
 import {UserService} from "../services/user.service";
 import {User} from "../model/user";
+import {UserType} from "@app/model/user-type";
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
     email: null,
     password: null
   };
+  userType: boolean;
   email: string;
   isLoggedIn = false;
   isLoginFailed = false;
@@ -26,6 +28,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // if (this.user.userType == UserType.USER){
+    //   this.userType = true;
+    // } else if (this.user.userType == UserType.ADMIN){
+    //   this.userType = false;
+    // }
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
@@ -38,7 +45,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(email, password).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
-        this.userService.getUser(email).subscribe(data=>{
+        this.userService.getUser(email).subscribe(data => {
           this.user = data
         })
         this.email = email
@@ -56,7 +63,15 @@ export class LoginComponent implements OnInit {
   }
 
   userPage(id: number) {
-    this.router.navigate(['user', id])
+    this.router.navigate(['user', id]).then(() => {
+      window.location.reload();
+    })
+  }
+
+  adminPage(id: number) {
+    this.router.navigate(['admin', id]).then(() => {
+      window.location.reload();
+    })
   }
 
   logout(): void {

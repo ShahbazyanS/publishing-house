@@ -1,34 +1,43 @@
-<h3>Add Book</h3>
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <input type="text" [(ngModel)]="book.title" name="title" placeholder="title"/>
-  </div>
-  <div>
-    <input type="email" [(ngModel)]="book.description" name="description" placeholder="description"/>
-  </div>
-  <div>
-    <input type="file" [(ngModel)]="book.picUrl" name="picUrl">
-  </div>
-  <div>
-    <input type="text" [(ngModel)]="book.pubId" name="pubHouseId" value="{{publishingHouse1}}">
-  </div>
-  <div>
-    <select
-      name="genre"
-      [(ngModel)]="book.genre">
-      <option *ngFor="let gen of genres">{{gen.value}}</option>
-    </select>
-    <!--      <div><input type="checkbox" [(ngModel)]="book.genre" name="{{gen.value()}}">-->
-    <!--        <label>{{gen.value}}</label>-->
-    <!--      </div>-->
-  </div>
-  <div>
-    <select
-      name="author"
-      [(ngModel)]="book.author">
-      <option *ngFor="let author of authors" [ngValue]="author">{{author.name}}</option>
-    </select>
-  </div>
-  <button type="submit" name="signup" id="signup" class="form-submit">Add</button>
-</form>
-<h1>{{publishingHouse1}}</h1>
+<div class="container"><h3>Add Book</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="book.title" name="title" placeholder="title"/>
+    </div>
+    <br>
+    <div class="form-group">
+      <input type="email" class="form-control" [(ngModel)]="book.description" name="description" placeholder="description"/>
+    </div>
+    <br>
+    <div class="form-group">
+      <input type="file" class="form-control" [(ngModel)]="book.picUrl" name="picUrl">
+    </div>
+<!--    <br>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" [(ngModel)]="book.pubId" name="pubHouseId" value="{{publishingHouse1}}">-->
+<!--    </div>-->
+    <br>
+    <div class="form-group">
+      <select
+        class="form-select"
+        name="genre"
+        [(ngModel)]="book.genre">
+        <option *ngFor="let gen of genres">{{gen.value}}</option>
+      </select>
+      <!--      <div><input type="checkbox" [(ngModel)]="book.genre" name="{{gen.value()}}">-->
+      <!--        <label>{{gen.value}}</label>-->
+      <!--      </div>-->
+    </div>
+    <br>
+    <div class="form-group">
+      <select
+        class="form-select"
+        name="author"
+        [(ngModel)]="book.author">
+        <option *ngFor="let author of authors" [ngValue]="author">{{author.name}}</option>
+      </select>
+    </div>
+    <br>
+    <button type="submit"  class="btn btn-success" name="signup" id="signup">Add</button>
+  </form>
+  <h1>{{publishingHouse1}}</h1>
+</div>

@@ -1,14 +1,17 @@
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <input type="text" [(ngModel)]="pubHouse.name" name="name" placeholder="Name">
+<div class="container"><form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]="pubHouse.name" name="name" placeholder="Name">
   </div>
+  <br>
   <div>
-
     <select
+      class="form-select"
       name="contact"
       [(ngModel)]="pubHouse.contact">
       <option *ngFor="let contact of contacts" [ngValue]="contact">{{contact.address}}</option>
     </select>
   </div>
-  <button type="submit" name="signup" id="signup" class="form-submit">Add</button>
+  <br>
+  <button type="submit" class="btn btn-success" name="signup" id="signup">Add</button>
 </form>
+</div>

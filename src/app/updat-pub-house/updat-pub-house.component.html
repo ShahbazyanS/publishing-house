@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Update Publishing House</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="pubHouse.name" name="name" placeholder="Name">
+    </div>
+    <br>
+    <div>
+      <select
+        class="form-select"
+        name="contact"
+        [(ngModel)]="pubHouse.contact">
+        <option *ngFor="let contact of contacts" [ngValue]="contact">{{contact.address}}</option>
+      </select>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success" name="signup" id="signup">Update</button>
+  </form>
+</div>

@@ -1,12 +1,17 @@
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <input type="text" [(ngModel)]="contact.address" name="address" placeholder="address">
-  </div>
-  <div>
-    <input type="text" [(ngModel)]="contact.email" name="email" placeholder="email">
-  </div>
-  <div>
-    <input type="text" [(ngModel)]="contact.phone" name="phone" placeholder="phone">
-  </div>
-  <button type="submit" name="signup" id="signup" class="form-submit">Add</button>
-</form>
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="contact.address" name="address" placeholder="address">
+    </div>
+    <br>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="contact.email" name="email" placeholder="email">
+    </div>
+    <br>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="contact.phone" name="phone" placeholder="phone">
+    </div>
+    <br>
+    <button type="submit" name="signup" class="btn btn-success" id="signup">Add</button>
+  </form>
+</div>

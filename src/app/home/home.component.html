@@ -1,30 +1,23 @@
 
-<section class="signup">
-  <div class="container">
-    <div class="signup-content">
-      <div class="signup-form" >
-        <div  >
-          <table style="width:100%">
-            <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Action</th>
-            </tr>
-            <tr *ngFor="let book of books">
-              <td>{{book.title}}</td>
-              <td>{{book.description}}</td>
-              <td>
-                <button (click)="bookDetails(book.id)">details</button>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div class="signup-image">
-
-        <figure><img src="assets/images/signup-image.jpg" alt="sing up image"></figure>
-        <a routerLink="/login" class="signup-image-link">I am already member</a>
-      </div>
-    </div>
+<div class="container">
+  <table style="width:100%" class="table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let book of books">
+      <td>{{book.title}}</td>
+      <td>{{book.description}}</td>
+      <td>
+        <button (click)="bookDetails(book.id)" class="btn btn-primary">details</button>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <div>
+    <a routerLink="/login" class="btn btn-primary">I am already member</a>
   </div>
-</section>
+</div>
+
+

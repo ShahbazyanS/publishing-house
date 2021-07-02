@@ -4,7 +4,6 @@ import {Book} from "../model/book";
 import {Genre} from "../model/genre";
 import {AuthorService} from "@app/services/author.service";
 import {Author} from "@app/model/author";
-import {PublishingHouse} from "@app/model/publishing-house";
 
 @Component({
   selector: 'app-add-book',

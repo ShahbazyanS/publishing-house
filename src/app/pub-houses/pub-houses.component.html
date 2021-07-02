@@ -1,0 +1,21 @@
+<div class="container">
+  <h3>Publishing Houses</h3>
+  <table style="width:100%">
+    <tr>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let houses of pubHouses">
+      <td>{{houses.name}}</td>
+      <td>{{houses.contact.address}}</td>
+      <td>
+        <button (click)="update(houses.id)">Update</button>
+        <button (click)="delete(houses.id)">Delete</button>
+        <button (click)="pubHousePage(houses.id)">Details</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+

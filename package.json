@@ -22,8 +22,10 @@
     "@syncfusion/ej2-angular-buttons": "^19.1.63",
     "@syncfusion/ej2-base": "~19.1.64",
     "@syncfusion/ej2-buttons": "~19.1.63",
-    "bootstrap": "^5.0.1",
+    "bootstrap": "^5.0.2",
+    "jquery": "^3.6.0",
     "ng-checkbox": "^1.0.2",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

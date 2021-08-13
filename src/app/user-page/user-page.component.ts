@@ -30,9 +30,4 @@ export class UserPageComponent implements OnInit {
       this.user = data;
     })
   }
-
-  pubHousePage(id: number){
-    this.router.navigate(['publishing_house', id]);
-  }
-
 }

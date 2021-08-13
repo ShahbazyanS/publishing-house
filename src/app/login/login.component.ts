@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     email: null,
     password: null
   };
-  userType: boolean;
+  userType = false;
   email: string;
   isLoggedIn = false;
   isLoginFailed = false;
@@ -28,25 +28,23 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (this.user.userType == UserType.USER){
-    //   this.userType = true;
-    // } else if (this.user.userType == UserType.ADMIN){
-    //   this.userType = false;
-    // }
+    if (this.user.userType == UserType.ADMIN) {
+      this.userType = true;
+    }
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
+      // this.roles = this.tokenStorage.getUser().roles;
     }
   }
 
   onSubmit(): void {
     const {email, password} = this.form;
-
     this.authService.login(email, password).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.userService.getUser(email).subscribe(data => {
           this.user = data
+
         })
         this.email = email
         this.tokenStorage.saveUser(this.user);
@@ -77,4 +75,16 @@ export class LoginComponent implements OnInit {
   logout(): void {
     this.tokenStorage.signOut();
   }
+
+  // redirectUser(id: number) {
+  //   if (this.userType == UserType.ADMIN) {
+  //     this.router.navigate(['admin', id]).then(() => {
+  //       window.location.reload();
+  //     })
+  //   } else if (this.userType == UserType.USER) {
+  //     this.router.navigate(['user', id]).then(() => {
+  //       window.location.reload();
+  //     })
+  //   }
+  // }
 }

@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PubHouseService} from "@app/services/pub-house.service";
 import {PublishingHouse} from "@app/model/publishing-house";
 import {Router} from "@angular/router";
+import {User} from "@app/model/user";
 
 @Component({
   selector: 'app-pub-houses',
@@ -16,6 +17,7 @@ export class PubHousesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.publishingHouses()
   }
 

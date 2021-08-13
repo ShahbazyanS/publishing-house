@@ -1,16 +1,20 @@
-
 <div class="container">
+  <form (ngSubmit)="searchBook()">
+    <input type="text" [(ngModel)]="word" name="word"> <br>
+    <input type="submit" class="btn btn-success" name="search" id="signin" value="Search"/> &nbsp;
+  </form>
+  <br>
   <table style="width:100%" class="table-striped">
-    <tr>
+    <tr class="text-center">
       <th>Title</th>
       <th>Description</th>
       <th>Action</th>
     </tr>
-    <tr *ngFor="let book of books">
+    <tr *ngFor="let book of books" class="text-center">
       <td>{{book.title}}</td>
       <td>{{book.description}}</td>
       <td>
-        <button (click)="bookDetails(book.id)" class="btn btn-primary">details</button>
+        <button (click)="bookDetails(book.id)" class="btn btn-primary">Details</button>
       </td>
     </tr>
   </table>
@@ -18,6 +22,8 @@
   <div>
     <a routerLink="/login" class="btn btn-primary">I am already member</a>
   </div>
+
+
 </div>
 
 

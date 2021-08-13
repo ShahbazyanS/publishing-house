@@ -17,6 +17,10 @@ export class BookService {
     return this.http.get<Book[]>(`${this.baseUrl}/last9`)
   }
 
+  searchBook(word: string): Observable<Book[]>{
+    return this.http.get<Book[]>(`${this.baseUrl}/search/${word}`)
+  }
+
   getById(id: number): Observable<Book> {
     return this.http.get<Book>(`${this.baseUrl}/${id}`)
   }

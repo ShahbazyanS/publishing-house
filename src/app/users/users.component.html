@@ -1,17 +1,17 @@
 <div class="container">
   <h3>Users</h3>
-  <table style="width:100%">
-    <tr>
+  <table class="table table-striped">
+    <tr class="text-center">
       <th>Name</th>
       <th>Email</th>
       <th>Action</th>
     </tr>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users" class="text-center">
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
       <td>
         <!--            <button (click)="update(houses.id)">Update</button>-->
-        <button (click)="delete(user.id)">Delete</button>
+        <button (click)="delete(user.id)" class="btn btn-danger" style="color: black">Delete</button>
       </td>
     </tr>
   </table>

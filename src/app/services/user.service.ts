@@ -20,7 +20,7 @@ export class UserService {
     return this.httpClient.get<User>(`${this.baseUrl}/email/${email}`)
   }
 
-  getUserById(id: number): Observable<any>{
+  getUserById(id: number,): Observable<any>{
     return this.httpClient.get(`${this.baseUrl}/${id}`)
   }
 

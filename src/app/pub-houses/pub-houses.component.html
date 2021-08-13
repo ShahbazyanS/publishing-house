@@ -1,18 +1,18 @@
 <div class="container">
   <h3>Publishing Houses</h3>
-  <table style="width:100%">
-    <tr>
+  <table class="table table-striped">
+    <tr class="text-center">
       <th>Name</th>
       <th>Contact</th>
       <th>Action</th>
     </tr>
-    <tr *ngFor="let houses of pubHouses">
+    <tr *ngFor="let houses of pubHouses" class="text-center">
       <td>{{houses.name}}</td>
       <td>{{houses.contact.address}}</td>
       <td>
-        <button (click)="update(houses.id)">Update</button>
-        <button (click)="delete(houses.id)">Delete</button>
-        <button (click)="pubHousePage(houses.id)">Details</button>
+        <button (click)="update(houses.id)" class="btn btn-info">Update</button>
+        <button (click)="delete(houses.id)" style="color: black"class="btn btn-danger">Delete</button>
+        <button (click)="pubHousePage(houses.id)" class="btn btn-info">Details</button>
       </td>
     </tr>
   </table>

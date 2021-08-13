@@ -1,6 +1,6 @@
 <section class="container">
 
-  <div>
+  <div class="col-md-6 offset-md-3">
     <h2>Login</h2>
     <div>
       <div>
@@ -77,12 +77,18 @@
           <!--              {{userPage(user.id)}}-->
           <!--              </label>-->
           <!--              <label #admin>{{adminPage(user.id)}}</label>-->
-          <label *ngIf="!userType">
-            {{userPage(user.id)}}
-          </label>
-          <!--              <label *ngIf="!userType">-->
-          <!--                {{adminPage(user.id)}}-->
-          <!--              </label>-->
+<!--          <label *ngIf="!userType">-->
+<!--            {{userPage(user.id)}}-->
+<!--          </label>-->
+<!--          <li *ngIf="userType">-->
+<!--            <a [routerLink]="userPage(user.id)"></a>-->
+<!--          </li>-->
+<!--          <li routerLinkActive="active">-->
+<!--          <a routerLink="{{adminPage(user.id)}}"></a>-->
+<!--          </li>-->
+          <!--          <label *ngIf="userType">-->
+<!--          {{adminPage(user.id)}}-->
+<!--           </label>-->
           <a href (click)="logout()">LogOut</a>
         </div>
       </div>
